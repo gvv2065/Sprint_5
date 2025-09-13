@@ -1,5 +1,5 @@
 import pytest
-from conf import Conf
+from data import Conf
 from utils.page_utils import PageUtils
 from locators.forgot_password_locators import ForgotPasswordLocators
 

@@ -1,5 +1,5 @@
 from utils.steps import Steps
-from conf import Conf
+from data import Conf
 
 class TestLoginPage:
     def test_login_success(self, steps: Steps):

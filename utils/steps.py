@@ -1,5 +1,5 @@
 from utils.page_utils import PageUtils
-from conf import Conf
+from data import Conf
 from locators.login_page_locators import LoginPageLocators
 from locators.account_page_locators import AccountPageLocators
 from locators.registration_page_locators import RegistrationPageLocators

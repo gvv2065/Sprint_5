@@ -3,7 +3,7 @@ from utils.utils import generate_email, generate_password
 from locators.registration_page_locators import RegistrationPageLocators
 from utils.steps import Steps
 from utils.page_utils import PageUtils
-from conf import Conf
+from data import Conf
 
 class TestRegistrationPage:
     @pytest.fixture(autouse=True)
