@@ -9,10 +9,8 @@ def setup_driver():
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--window-size=1920,1080')
     driver = webdriver.Chrome(options=chrome_options)
-    try:
-        yield driver
-    finally:
-        driver.quit()
+    yield driver
+    driver.quit()
 
 @pytest.fixture
 def page_utils(setup_driver):
