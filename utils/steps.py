@@ -17,12 +17,14 @@ class Steps:
         self._pageUtils.find_clickable_element(LoginPageLocators.LOGIN_BUTTON).click()
         # считаем что мы успешно залогинились если есть кнопка "Оформить заказ"
         self._pageUtils.find_element(LoginSuccessLocators.ORDER_REQUEST)
+        return True
         
     def logout(self):
         self._pageUtils.find_clickable_element(TopMenuLocators.ACCOUNT_LINK).click()
         self._pageUtils.find_clickable_element(AccountPageLocators.LOGOUT_BUTTON).click()
         self._pageUtils.wait_for_url(Conf.LOGIN_PAGE)
         self._pageUtils.find_clickable_element(LoginPageLocators.LOGIN_BUTTON)
+        return True
         
         
     def register(self, name, email, password):
@@ -33,5 +35,6 @@ class Steps:
         self._pageUtils.find_element(RegistrationPageLocators.PASSWORD_FIELD).send_keys(password)
         self._pageUtils.find_clickable_element(RegistrationPageLocators.REGISTER_BUTTON).click()
         # ассертим логин
-        self.login(email, password)
+        assert self.login(email, password) == True
+        return True
         

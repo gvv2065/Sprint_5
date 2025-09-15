@@ -11,7 +11,8 @@ class TestRegistrationPage:
         page_utils.driver.get(Conf.REGISTER_PAGE)
         
     def test_registration_successful(self, steps: Steps):
-        steps.register("TestUser", generate_email(), generate_password())
+        registerIsSuccessful = steps.register("TestUser", generate_email(), generate_password())
+        assert registerIsSuccessful == True
        
     def test_registration_failed_with_invalid_password(self, page_utils: PageUtils):
         # заполняем форму

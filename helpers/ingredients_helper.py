@@ -13,6 +13,7 @@ class IngredientsHelper:
                 tab_element.click()
                 self.page_utils.find_element(IngredientsLocators.get_active_tab_locator(tab_name))
                 self.page_utils.find_element(IngredientsLocators.get_section_header_locator(tab_name))
+                return True
             except TimeoutException as e:
                 raise AssertionError(f"Ошибка при проверке вкладки '{tab_name}': {str(e)}")
             except Exception as e:
